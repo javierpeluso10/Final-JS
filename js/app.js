@@ -108,25 +108,36 @@ const actualizarCarrito = () => {
 // FINALIZAR COMPRA
 
 const finalizarCompra = () =>{
-    Swal.fire({
-        title: 'Desea finalizar la compra?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si, finalizar compra'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            Swal.fire(
-                'Su Compra se ha realizado con Exito',
-                '',
-                'success'
-            )
-            carrito = []
-            localStorage.clear()
-            actualizarCarrito()
-        }
-    })
+    if (localStorage.getItem('carrito')) {
+        Swal.fire({
+            title: 'Desea finalizar la compra?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, finalizar compra'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Su Compra se ha realizado con Exito',
+                    '',
+                    'success'
+                )
+                carrito = []
+                localStorage.clear()
+                actualizarCarrito()
+            }
+        })
+    } else {
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Su carrito se encuentra vacio',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
+    
 }
 
 //LISTENER DEL BOTON FINALIZAR COMPRA
