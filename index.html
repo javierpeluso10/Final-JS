@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final Js</title>
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="titulo" class="titulo">Proyecto Final Js</h1>
+        <button id="botonCarrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
+    </header>
+
+    <main id="contenedorProductos">
+    </main>
+
+    <div class="cartelContenedor">
+        <!-- CODIGO INYECTADO DESDE JS -->
+        <div class="cartelCarrito"> 
+            <h3>Carrito</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div id="carritoContenedor">
+<!-- CODIGO INYECTADO DESDE JS -->
+            </div>
+            <p class="precioProducto">Precio Total: $<span id="precioTotal">0</span></p>
+            <div class="botonesCarrito">
+                <button id="vaciarCarrito" class="botonAgregar">Vaciar carrito</button>
+                <button id="finalizarCompra" class="botonFinalizar">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/stock.js"></script>
+    <script src="./js/carrito.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
