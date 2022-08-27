@@ -22,6 +22,5 @@ const Toast = Swal.mixin({
 })
 
 
-
 //EJECUCION
 obtenerProductos()

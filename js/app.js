@@ -9,6 +9,10 @@ const cantidad = document.querySelector('#cantidad')
 const precioTotal = document.querySelector('#precioTotal')
 const cantidadTotal = document.querySelector('#cantidadTotal')
 const terminarCompra = document.querySelector("#finalizarCompra")
+const searchBar = document.querySelector("#campoBusqueda")
+const searchButton = document.querySelector('#botonBusqueda')
+
+
 
 let carrito = []
 
@@ -33,6 +37,7 @@ botonVaciar.addEventListener('click', () => {
 
 //INYECTAR PRODUCTOS EN HTML
 const renderizarProductos =(todosLosProductos)=>{
+    contenedorProductos.innerHTML = ""
     todosLosProductos.forEach((producto) => {
     const div = document.createElement('div')
     div.classList.add('producto')
@@ -140,5 +145,15 @@ const finalizarCompra = () =>{
     
 }
 
+
+// BUSQUEDA DE PRODUCTOS
+const buscarProductos = () => {
+    const query = searchBar.value.toLowerCase()
+    const arrayResultados = stockProductos.filter((producto) => producto.marca.toLowerCase().includes(query))
+    renderizarProductos(arrayResultados);
+}
+
 //LISTENER DEL BOTON FINALIZAR COMPRA
 terminarCompra.addEventListener("click", finalizarCompra)
+searchButton.addEventListener('click', buscarProductos)
+searchBar.addEventListener('input', buscarProductos)
