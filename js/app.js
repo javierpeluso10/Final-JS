@@ -1,4 +1,3 @@
-
 //SELECTORES
 
 const contenedorProductos = document.querySelector('#contenedorProductos')
@@ -13,23 +12,15 @@ const searchBar = document.querySelector("#campoBusqueda")
 const searchButton = document.querySelector('#botonBusqueda')
 
 
-
+// DECLARO UN CARRITO VACIO
 let carrito = []
 
+//CHEQUAMOS QUE EL CARRITO ESTE VACIO SINO MOSTRAMOS LO QUE TENGA GUARDADO EN STORAGE
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('carrito')){
         carrito = JSON.parse(localStorage.getItem('carrito'))
         actualizarCarrito()
     }
-})
-
-
-//VACIAR CARRITO
-
-botonVaciar.addEventListener('click', () => {
-    carrito = []
-    localStorage.clear()
-    actualizarCarrito()
 })
 
 
@@ -90,7 +81,14 @@ const eliminarDelCarrito = (prodId) => {
     actualizarCarrito()
 }
 
-// REINYECTA PRODUCTOS AL CARRITO QUE NO HAYAN SIDO ELIMINADOS
+//VACIAR CARRITO
+botonVaciar.addEventListener('click', () => {
+    carrito = []
+    localStorage.clear()
+    actualizarCarrito()
+})
+
+// REINYECTA PRODUCTOS AL CARRITO
 const actualizarCarrito = () => {
     contenedorCarrito.innerHTML = "" 
     carrito.forEach((prod) => {
@@ -99,23 +97,26 @@ const actualizarCarrito = () => {
         div.innerHTML = `
         <p>${prod.marca}</p>
         <p>Precio:$${prod.precio}</p>
-        <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
+        <p>Cantidad: <span id="cantidad">${prod.cantidad}</span> </p> </input>
         <button onclick="eliminarDelCarrito(${prod.id})" class="botonEliminar"><i class="fas fa-trash-alt"></i></button>
         `
         contenedorCarrito.appendChild(div)
         localStorage.setItem('carrito', JSON.stringify(carrito))
     })
-    contadorCarrito.innerText = carrito.length 
-    precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0)
+    if (carrito.length === 0) {
+        contadorCarrito.innerText = ""
+    } else {
+        contadorCarrito.innerText = ` ${carrito.length}` 
+    }
+    precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio,0)
 }
 
 
 // FINALIZAR COMPRA
-
 const finalizarCompra = () =>{
     if (localStorage.getItem('carrito')) {
         Swal.fire({
-            title: 'Desea finalizar la compra?',
+            title: "Desea finalizar la compra?",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
