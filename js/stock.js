@@ -2,9 +2,17 @@ let stockProductos = []
 
 // OBTENER PRODUCTOS DE JSON
 const obtenerProductos = async () => {
-    const response = await fetch("data/productos.json")
-    stockProductos = await response.json()
-    renderizarProductos(stockProductos)
+    try{ 
+        const response = await fetch("data/productos.json")
+        stockProductos = await response.json()
+        renderizarProductos(stockProductos)
+    }catch{
+        Swal.fire(
+            'Hubo un problema, intentarlo nuevamente mas tarde',
+            '',
+            'error'
+        )
+    }
 }
 
 // SWEETALERT
@@ -24,3 +32,4 @@ const Toast = Swal.mixin({
 
 //EJECUCION
 obtenerProductos()
+// alert('Ups! Hubo un problema, intentarlo nuevamente mas tarde')
