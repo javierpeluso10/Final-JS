@@ -5,12 +5,13 @@ const contenedorCarrito = document.querySelector('#carritoContenedor')
 const botonVaciar = document.querySelector('#vaciarCarrito')
 const contadorCarrito = document.querySelector('#contadorCarrito')
 const cantidad = document.querySelector('#cantidad')
-const precioTotal = document.querySelector('#precioTotal')
 const cantidadTotal = document.querySelector('#cantidadTotal')
 const terminarCompra = document.querySelector("#finalizarCompra")
 const searchBar = document.querySelector("#campoBusqueda")
 const searchButton = document.querySelector('#botonBusqueda')
-
+const precioDeCuota = document.querySelector("#precioDeCuota")
+const selectorDeCuotas = document.querySelector("#selectorDeCuotas")
+const carritoContenedor = document.querySelector(".cartelCarrito")
 
 // DECLARO UN CARRITO VACIO
 let carrito = []
@@ -22,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarCarrito()
     }
 })
-
 
 //FUNCIONES
 
@@ -88,7 +88,7 @@ botonVaciar.addEventListener('click', () => {
     actualizarCarrito()
 })
 
-// REINYECTA PRODUCTOS AL CARRITO
+// MUESTRA CARRITO CON PRODUCTOS Y PRECIO TOTAL
 const actualizarCarrito = () => {
     contenedorCarrito.innerHTML = "" 
     carrito.forEach((prod) => {
@@ -108,9 +108,22 @@ const actualizarCarrito = () => {
     } else {
         contadorCarrito.innerText = ` ${carrito.length}` 
     }
+    const p = document.createElement('p')
+    p.classList.add('precioProducto')
+    p.innerHTML = `Precio Total: $<span id="precioTotal"></span>`
+    contenedorCarrito.appendChild(p)
     precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio,0)
 }
 
+//CALCULAR CUOTAS
+const calcularCuota = () => {
+    const obtenerCantidadDeCuotas = parseInt(document.querySelector("#selectorDeCuotas").value)
+    const obtenerValorCompraTotal = parseInt(document.querySelector('#precioTotal').textContent)
+    const resultado = obtenerValorCompraTotal/obtenerCantidadDeCuotas 
+    precioDeCuota.innerHTML = `${resultado}`
+}
+
+selectorDeCuotas.addEventListener("change", calcularCuota);
 
 // FINALIZAR COMPRA
 const finalizarCompra = () =>{
@@ -145,7 +158,6 @@ const finalizarCompra = () =>{
     }
     
 }
-
 
 // BUSQUEDA DE PRODUCTOS
 const buscarProductos = () => {

@@ -185,6 +185,14 @@ p {
     padding-top: 10px;
     
 }
+
+.cuotas{
+    margin: 10px 0;
+    text-decoration: underline;
+}
+.precioDeCuota{
+    margin: 10px 0;
+}
 .botonesCarrito{
     display: flex;
     flex-direction: column;
