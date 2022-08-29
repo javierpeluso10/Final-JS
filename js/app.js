@@ -124,7 +124,7 @@ const actualizarCarrito = () => {
 const calcularCuota = () => {
     const obtenerCantidadDeCuotas = parseInt(document.querySelector("#selectorDeCuotas").value)
     const obtenerValorCompraTotal = parseInt(document.querySelector('#precioTotal').textContent)
-    const resultado = obtenerValorCompraTotal/obtenerCantidadDeCuotas 
+    const resultado = (obtenerValorCompraTotal/obtenerCantidadDeCuotas).toFixed(2)
     precioDeCuota.innerHTML = `${resultado}`
 }
 
