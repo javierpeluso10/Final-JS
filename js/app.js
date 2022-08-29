@@ -11,7 +11,7 @@ const searchBar = document.querySelector("#campoBusqueda")
 const searchButton = document.querySelector('#botonBusqueda')
 const precioDeCuota = document.querySelector("#precioDeCuota")
 const selectorDeCuotas = document.querySelector("#selectorDeCuotas")
-const carritoContenedor = document.querySelector(".cartelCarrito")
+// const contenedorCuotas = document.querySelector("#contenedorCuotas")
 
 // DECLARO UN CARRITO VACIO
 let carrito = []
@@ -106,13 +106,14 @@ const actualizarCarrito = () => {
     if (carrito.length === 0) {
         contadorCarrito.innerText = ""
     } else {
-        contadorCarrito.innerText = ` ${carrito.length}` 
+        contadorCarrito.innerText = ` ${carrito.length}`
     }
     const p = document.createElement('p')
     p.classList.add('precioProducto')
     p.innerHTML = `Precio Total: $<span id="precioTotal"></span>`
     contenedorCarrito.appendChild(p)
     precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio,0)
+    calcularCuota()
 }
 
 //CALCULAR CUOTAS
@@ -123,7 +124,7 @@ const calcularCuota = () => {
     precioDeCuota.innerHTML = `${resultado}`
 }
 
-selectorDeCuotas.addEventListener("change", calcularCuota);
+selectorDeCuotas.addEventListener("click", calcularCuota);
 
 // FINALIZAR COMPRA
 const finalizarCompra = () =>{
