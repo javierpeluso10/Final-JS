@@ -11,7 +11,7 @@ const searchBar = document.querySelector("#campoBusqueda")
 const searchButton = document.querySelector('#botonBusqueda')
 const precioDeCuota = document.querySelector("#precioDeCuota")
 const selectorDeCuotas = document.querySelector("#selectorDeCuotas")
-// const contenedorCuotas = document.querySelector("#contenedorCuotas")
+
 
 // DECLARO UN CARRITO VACIO
 let carrito = []
@@ -78,6 +78,10 @@ const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
     const indice = carrito.indexOf(item) 
     carrito.splice(indice, 1)
+    Toast.fire({
+        icon: 'success',
+        title: 'Se elimino el producto del Carrito'
+    })
     actualizarCarrito()
 }
 
