@@ -18,7 +18,7 @@
         "id": 6, "marca": "Asus Prime X299",  "cantidad": 1, "precio": 35000,  "imgSrc":     "img/ASUS_Prime_X299-A_II.png"
     },
     {
-        "id": 7, "marca": "Asus ROG MAXIMUS HERO XI",  "cantidad": 1, "precio": 45000,     "imgSrc": "img/ASUS_ROG_MAXIMUS_XI_HERO.png"
+        "id": 7, "marca": "Asus MAXIMUS HERO XI",  "cantidad": 1, "precio": 45000,     "imgSrc": "img/ASUS_ROG_MAXIMUS_XI_HERO.png"
     },
     {
         "id": 8, "marca": "Asus ROG STRIX Z370",  "cantidad": 1, "precio": 37000,  "imgSrc": "img/ASUS_ROG_STRIX_Z370-I_GAMING.jpg"
