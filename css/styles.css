@@ -6,6 +6,7 @@
 
 body{
     font-family: 'Saira Condensed', sans-serif;
+    font-size: 1.2rem;
 }
 img {
     width: 100%;
@@ -23,6 +24,21 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.shop{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+#contadorCarrito{
+    border-radius:50%;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-size: 1.8rem;
+    margin-left: -20px;
+    margin-top: -20px;
 }
 
 #campoBusqueda{
@@ -51,6 +67,7 @@ h1 {
     font-size: 50px;
 }
 #botonCarrito {
+    display: flex;
     border: none;
     color: rgb(0, 0, 0);
     font-size: 40px;
@@ -127,15 +144,16 @@ p {
     outline: none;
 }
 .cartelContenedor {
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
     width: 100%;
-    height: 100vh;
+    height: 400vh;
     background-color: #0000004d;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    transition: all 1s;
+    transition: all .8s;
     opacity: 0;
     visibility: hidden;
 }
@@ -146,16 +164,14 @@ p {
 }
 
 .cartelCarrito {
-    /* position: relative; */
     display:flex ;
     flex-direction: column;
     justify-content: flex-start;
     background-color: #ffffff;
     min-width: 500px;
     padding: 20px;
-    /* margin-top: -100%; */
     transition: all 1s ;
-    height: 100vh;
+    height: 400vh
 }
 
 .carritoActive .cartelCarrito {
@@ -183,7 +199,6 @@ p {
 }
 .cartelCarrito .precioProducto {
     padding-top: 10px;
-    
 }
 
 .cuotas{
@@ -197,7 +212,7 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 100vh;
+    height: 30vh;
 }
 .productoEnCarrito {
     border-left: 5px solid #383838;

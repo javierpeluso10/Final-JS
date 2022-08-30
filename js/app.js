@@ -38,8 +38,7 @@ const renderizarProductos =(todosLosProductos)=>{
     <h3 class="productoNombre">${producto.marca}</h3>
     <p class="precioProducto">Precio:$ ${producto.precio}</p>
     <button id="agregar${producto.id}" class="botonAgregar">Agregar al Carrito</button>
-    </div>
-    `
+    </div>`
     contenedorProductos.append(div)
     const boton = document.getElementById(`agregar${producto.id}`)
     boton.addEventListener('click', () => {
@@ -73,10 +72,11 @@ const agregarAlCarrito = (prodId) => {
 }
 
 
-// ELIMINAR PRODUCTOS DEL CARRITO
+// ELIMINAR PRODUCTO DEL CARRITO
 const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
-    const indice = carrito.indexOf(item) 
+    item.cantidad = 1
+    const indice = carrito.indexOf(item)
     carrito.splice(indice, 1)
     Toast.fire({
         icon: 'success',
@@ -87,10 +87,18 @@ const eliminarDelCarrito = (prodId) => {
 
 //VACIAR CARRITO
 botonVaciar.addEventListener('click', () => {
+    restablecerCantidad()
     carrito = []
     localStorage.clear()
     actualizarCarrito()
 })
+
+//RESTABLECER CANTIDAD DE PRODUCTOS CUANDO SE VACIA EL CARRITO
+const restablecerCantidad = () =>{
+    carrito.forEach(prod => {
+        prod.cantidad = 1
+    });
+}
 
 // MUESTRA CARRITO CON PRODUCTOS Y PRECIO TOTAL
 const actualizarCarrito = () => {
@@ -102,8 +110,7 @@ const actualizarCarrito = () => {
         <p>${prod.marca}</p>
         <p>Precio:$${prod.precio}</p>
         <p>Cantidad: <span id="cantidad">${prod.cantidad}</span> </p> </input>
-        <button onclick="eliminarDelCarrito(${prod.id})" class="botonEliminar"><i class="fas fa-trash-alt"></i></button>
-        `
+        <button onclick="eliminarDelCarrito(${prod.id})" class="botonEliminar"><i class="fas fa-trash-alt"></i></button>`
         contenedorCarrito.appendChild(div)
         localStorage.setItem('carrito', JSON.stringify(carrito))
     })
