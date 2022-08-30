@@ -19,6 +19,8 @@ const obtenerProductos = async () => {
 
 const Toast = Swal.mixin({
     toast: true,
+    background: "#26798e",
+    color:"#ffe3b3",
     position: 'bottom-end',
     showConfirmButton: false,
     timer: 1500,
@@ -32,4 +34,3 @@ const Toast = Swal.mixin({
 
 //EJECUCION
 obtenerProductos()
-// alert('Ups! Hubo un problema, intentarlo nuevamente mas tarde')

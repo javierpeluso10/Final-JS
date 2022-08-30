@@ -239,5 +239,5 @@ p {
     color: #c20404;
 }
 .botonEliminar:focus {
-    outline: none;
+    outline: none; 
 }
