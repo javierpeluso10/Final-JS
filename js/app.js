@@ -129,10 +129,12 @@ const actualizarCarrito = () => {
 
 //CALCULAR CUOTAS
 const calcularCuota = () => {
-    const obtenerCantidadDeCuotas = parseInt(document.querySelector("#selectorDeCuotas").value)
-    const obtenerValorCompraTotal = parseInt(document.querySelector('#precioTotal').textContent)
-    const resultado = (obtenerValorCompraTotal/obtenerCantidadDeCuotas).toFixed(2)
-    precioDeCuota.innerHTML = `${resultado}`
+    if (carrito.length !== 0) {
+        const obtenerCantidadDeCuotas = parseInt(document.querySelector("#selectorDeCuotas").value)
+        const obtenerValorCompraTotal = parseInt(document.querySelector('#precioTotal').textContent)
+        const resultado = (obtenerValorCompraTotal/obtenerCantidadDeCuotas).toFixed(2)
+        precioDeCuota.innerHTML = `${resultado}`
+    }
 }
 
 selectorDeCuotas.addEventListener("click", calcularCuota);
