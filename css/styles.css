@@ -85,7 +85,7 @@ h1 {
 
 #contenedorProductos {
     max-width: 1200px;
-    margin: 60px auto;
+    margin: 80px auto;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -240,4 +240,18 @@ p {
 }
 .botonEliminar:focus {
     outline: none; 
+}
+
+.contenedorFiltro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.categorias{
+    padding: 5px;
+}
+
+.filtoCategoria{
+    margin-right: 5px;
 }

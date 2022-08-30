@@ -1,5 +1,4 @@
 //SELECTORES
-
 const contenedorProductos = document.querySelector('#contenedorProductos')
 const contenedorCarrito = document.querySelector('#carritoContenedor')
 const botonVaciar = document.querySelector('#vaciarCarrito')
@@ -11,6 +10,10 @@ const searchBar = document.querySelector("#campoBusqueda")
 const searchButton = document.querySelector('#botonBusqueda')
 const precioDeCuota = document.querySelector("#precioDeCuota")
 const selectorDeCuotas = document.querySelector("#selectorDeCuotas")
+const filtroMicroprocesador = document.querySelector("#microprocesador")
+const filtroMother = document.querySelector("#motherboard")
+const filtroGpu = document.querySelector("#gpu")
+const filtroAll = document.querySelector("#todos")
 
 
 // DECLARO UN CARRITO VACIO
@@ -69,6 +72,41 @@ const agregarAlCarrito = (prodId) => {
         })
     }
     actualizarCarrito() 
+}
+
+//RENDERIZA PRODUCTOS FILTRADOS
+const renderizarProductosFiltrados = (pro) =>{
+    contenedorProductos.innerHTML = ""
+    pro.forEach((producto) => {
+    const div = document.createElement('div')
+    div.classList.add('producto')
+    div.innerHTML = `
+    <div class="cardProducto">
+    <img src=${producto.imgSrc} alt= "" class="imgProducto">
+    <h3 class="productoNombre">${producto.marca}</h3>
+    <p class="precioProducto">Precio:$ ${producto.precio}</p>
+    <button id="agregar${producto.id}" class="botonAgregar">Agregar al Carrito</button>
+    </div>`
+    contenedorProductos.append(div)
+    const boton = document.getElementById(`agregar${producto.id}`)
+    boton.addEventListener('click', () => {
+        agregarAlCarrito(producto.id)
+    })
+})
+}
+
+//FILTRAR PRODUCTOS POR CATEGORIA
+const filtrarProductosMother = () =>{
+    const gpu =stockProductos.filter(productos => productos.categoria === 'motherboard')
+    renderizarProductosFiltrados(gpu);
+}
+const filtrarProductosCpu = () =>{
+    const gpu =stockProductos.filter(productos => productos.categoria === 'microprocesador')
+    renderizarProductosFiltrados(gpu);
+}
+const filtrarProductosGpu = () =>{
+    const gpu =stockProductos.filter(productos => productos.categoria === 'GPU')
+    renderizarProductosFiltrados(gpu);
 }
 
 
@@ -182,7 +220,11 @@ const buscarProductos = () => {
     renderizarProductos(arrayResultados);
 }
 
-//LISTENER DEL BOTON FINALIZAR COMPRA
+//LISTENERS
 terminarCompra.addEventListener("click", finalizarCompra)
 searchButton.addEventListener('click', buscarProductos)
 searchBar.addEventListener('input', buscarProductos)
+filtroGpu.addEventListener('input', filtrarProductosGpu)
+filtroMother.addEventListener('input', filtrarProductosMother)
+filtroMicroprocesador.addEventListener('input',filtrarProductosCpu)
+filtroAll.addEventListener('input', obtenerProductos)

@@ -1,50 +1,50 @@
 [
     {
-        "id": 1, "marca": "Ryzen 5 3600", "cantidad": 1, "precio": 32000,  "imgSrc":    "img/Ryzen_5_3600.png"
+        "id": 1, "marca": "Ryzen 5 3600", "cantidad": 1, "precio": 32000, "categoria": "microprocesador",  "imgSrc":    "img/Ryzen_5_3600.png"
     },
     {
-        "id": 2, "marca": "Ryzen 9 3900X",  "cantidad": 1, "precio": 100000,  "imgSrc":  "img/Ryzen_9_3900X.png"
+        "id": 2, "marca": "Ryzen 9 3900X",  "cantidad": 1, "precio": 100000, "categoria": "microprocesador", "imgSrc":  "img/Ryzen_9_3900X.png"
     },
     {
-        "id": 3, "marca": "Ryzen 7 3700X",  "cantidad": 1, "precio": 65000,  "imgSrc":   "img/Ryzen_7_3700X.png"
+        "id": 3, "marca": "Ryzen 7 3700X",  "cantidad": 1, "precio": 65000, "categoria": "microprocesador", "imgSrc":   "img/Ryzen_7_3700X.png"
     },
     {
-        "id": 4, "marca": "Intel i9 9900K",  "cantidad": 1, "precio": 100000,  "imgSrc":     "img/Intel_Core_i9-9900K.png"
+        "id": 4, "marca": "Intel i9 9900K",  "cantidad": 1, "precio": 100000, "categoria": "microprocesador", "imgSrc":     "img/Intel_Core_i9-9900K.png"
 },
     {
-        "id": 5, "marca": "Intel i7 8700K",  "cantidad": 1, "precio": 70000, "imgSrc":   "img/Intel_Core_i7-8700K.png"
+        "id": 5, "marca": "Intel i7 8700K",  "cantidad": 1, "precio": 70000, "categoria": "microprocesador", "imgSrc":   "img/Intel_Core_i7-8700K.png"
     },
     {
-        "id": 6, "marca": "Asus Prime X299",  "cantidad": 1, "precio": 35000,  "imgSrc":     "img/ASUS_Prime_X299-A_II.png"
+        "id": 6, "marca": "Asus Prime X299",  "cantidad": 1, "precio": 35000, "categoria": "motherboard", "imgSrc":     "img/ASUS_Prime_X299-A_II.png"
     },
     {
-        "id": 7, "marca": "Asus MAXIMUS HERO XI",  "cantidad": 1, "precio": 45000,     "imgSrc": "img/ASUS_ROG_MAXIMUS_XI_HERO.png"
+        "id": 7, "marca": "Asus MAXIMUS HERO XI",  "cantidad": 1, "precio": 45000,  "categoria": "motherboard",   "imgSrc": "img/ASUS_ROG_MAXIMUS_XI_HERO.png"
     },
     {
-        "id": 8, "marca": "Asus ROG STRIX Z370",  "cantidad": 1, "precio": 37000,  "imgSrc": "img/ASUS_ROG_STRIX_Z370-I_GAMING.jpg"
+        "id": 8, "marca": "Asus ROG STRIX Z370",  "cantidad": 1, "precio": 37000, "categoria": "motherboard", "imgSrc": "img/ASUS_ROG_STRIX_Z370-I_GAMING.jpg"
     },
     {
-        "id": 9, "marca": "Asus ROG STRIX Z390", "cantidad": 1, "precio": 30000,  "imgSrc": "img/ASUS_ROG_STRIX_Z390-E_GAMING.jpg"
+        "id": 9, "marca": "Asus ROG STRIX Z390", "cantidad": 1, "precio": 30000, "categoria": "motherboard", "imgSrc": "img/ASUS_ROG_STRIX_Z390-E_GAMING.jpg"
     },
     {
-        "id": 10, "marca": "Asus Prime X570",  "cantidad": 1, "precio": 25000,     "imgSrc": "img/Prime_X570-Pro.jpg"
+        "id": 10, "marca": "Asus Prime X570",  "cantidad": 1, "precio": 25000,  "categoria": "motherboard",   "imgSrc": "img/Prime_X570-Pro.jpg"
     },
     {
-        "id": 11, "marca": "Asus ROG CROSSHAIR VIII",  "cantidad": 1, "precio": 27000,     "imgSrc": "img/ROG_Crosshair_VIII_Hero.jpg"
+        "id": 11, "marca": "Asus ROG CROSSHAIR VIII",  "cantidad": 1, "precio": 27000,   "categoria": "motherboard",  "imgSrc": "img/ROG_Crosshair_VIII_Hero.jpg"
     },
     {
-        "id": 12, "marca": "Asus ROG STRIX X570",  "cantidad": 1,  "precio": 45000,    "imgSrc": "img/ROG_Strix_X570-F_Gaming.jpg"
+        "id": 12, "marca": "Asus ROG STRIX X570",  "cantidad": 1,  "precio": 45000,  "categoria": "motherboard",  "imgSrc": "img/ROG_Strix_X570-F_Gaming.jpg"
     },
     {
-        "id": 13, "marca": "MSI GeForce GTX 1650",  "cantidad": 1,  "precio": 80000,   "imgSrc": "img/MSI_GeForce_GTX_1650_Super_Gaming_X.jpg"
+        "id": 13, "marca": "MSI GeForce GTX 1650",  "cantidad": 1,  "precio": 80000, "categoria": "GPU",  "imgSrc": "img/MSI_GeForce_GTX_1650_Super_Gaming_X.jpg"
     },
     {
-        "id": 14, "marca": "MSI GeForce RTX 3080",  "cantidad": 1,  "precio": 200000,  "imgSrc": "img/MSI_GeForce_RTX_3080_GAMING_X_TRIO.jpg"
+        "id": 14, "marca": "MSI GeForce RTX 3080",  "cantidad": 1,  "precio": 200000, "categoria": "GPU", "imgSrc": "img/MSI_GeForce_RTX_3080_GAMING_X_TRIO.jpg"
     },
     {
-        "id": 15, "marca": "AMD Radeon RX 570",  "cantidad": 1,  "precio": 70000,  "imgSrc": "img/MD_Radeon_RX_570_RS.jpg"
+        "id": 15, "marca": "AMD Radeon RX 570",  "cantidad": 1,  "precio": 70000, "categoria": "GPU", "imgSrc": "img/MD_Radeon_RX_570_RS.jpg"
     },
     {
-        "id": 16, "marca": "AMD Radeon RX 5700 XT",  "cantidad": 1,  "precio": 77000,  "imgSrc": "img/XFX_AMD_Radeon_RX_5700_XT.jpg"
+        "id": 16, "marca": "AMD Radeon RX 5700 XT",  "cantidad": 1,  "precio": 77000, "categoria": "GPU", "imgSrc": "img/XFX_AMD_Radeon_RX_5700_XT.jpg"
     }
 ]
