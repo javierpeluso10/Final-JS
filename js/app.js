@@ -97,12 +97,12 @@ const renderizarProductosFiltrados = (pro) =>{
 
 //FILTRAR PRODUCTOS POR CATEGORIA
 const filtrarProductosMother = () =>{
-    const gpu =stockProductos.filter(productos => productos.categoria === 'motherboard')
-    renderizarProductosFiltrados(gpu);
+    const motherboard =stockProductos.filter(productos => productos.categoria === 'motherboard')
+    renderizarProductosFiltrados(motherboard);
 }
 const filtrarProductosCpu = () =>{
-    const gpu =stockProductos.filter(productos => productos.categoria === 'microprocesador')
-    renderizarProductosFiltrados(gpu);
+    const microprocesador =stockProductos.filter(productos => productos.categoria === 'microprocesador')
+    renderizarProductosFiltrados(microprocesador);
 }
 const filtrarProductosGpu = () =>{
     const gpu =stockProductos.filter(productos => productos.categoria === 'GPU')
